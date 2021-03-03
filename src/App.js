@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Home from "./pages/Home";
+import PersonalityQuiz from "./pages/PersonalityQuiz";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,10 +25,12 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App"></div>
-        <Route path="/" component={Home} />
-        <Route path="/login" component={LoginForm} />
-        <Route path="/signup" component={SignUpForm} />
+        <div className="App">
+          <Route path="/" component={Home} />
+          <Route path="/login" component={LoginForm} />
+          <Route path="/signup" component={SignUpForm} />
+          <Route path="/personalityquiz" component={PersonalityQuiz} />
+        </div>
       </Router>
     );
   }
