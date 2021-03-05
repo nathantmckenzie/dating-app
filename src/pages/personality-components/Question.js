@@ -58,6 +58,7 @@ function Question(props) {
                   };
                 });
                 setButtonClicked(true);
+                console.log(answers);
               }}
               value="false"
             >

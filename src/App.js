@@ -5,6 +5,7 @@ import LoginForm from "./pages/LoginForm";
 import SignUpForm from "./pages/SignUpForm";
 import Home from "./pages/Home";
 import PersonalityQuiz from "./pages/PersonalityQuiz";
+import PhotoUpload from "./pages/PhotoUpload";
 
 class App extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
           <Route path="/personalityquiz" component={PersonalityQuiz} />
+          <Route path="/photoupload" component={PhotoUpload} />
         </div>
       </Router>
     );

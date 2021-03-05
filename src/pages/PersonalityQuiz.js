@@ -4,6 +4,7 @@ import ResultsPage from "./personality-components/ResultsPage";
 
 export default function PersonalityQuiz() {
   const [result, setResult] = useState("FINISH THE TEST");
+
   return (
     <div>
       <Question result={result} setResult={setResult} />
