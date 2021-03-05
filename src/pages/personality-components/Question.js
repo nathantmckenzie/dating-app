@@ -38,17 +38,24 @@ function Question(props) {
   }
 
   return (
-    <div>
-      {questions.map((question, index) => {
+    <div class="container">
+      <h2>Questionaire</h2>
+      <br />
+
+      {questions.map((question) => {
         return (
           <div>
-            <li key={index}>{question.question}</li>
-            <button
-              key={index}
-              //   className={buttonClicked ? "buttonTrue" : "buttonFalse"}
+            <h4 key={question.id}>{question.question}</h4>
+            <label className="lab-up">Agree</label>
+            <input
+              type="button"
+              name="3"
               className={
-                answers[question.id] === "false" ? "buttonTrue" : "buttonFalse"
+                answers[question.id] === "strong-agree"
+                  ? "strong-agree-clicked"
+                  : "strong-agree"
               }
+              value="strong-agree"
               onClick={(e) => {
                 question.answer = e.target.value;
                 setAnswers((answers) => {
@@ -57,21 +64,18 @@ function Question(props) {
                     [question.id]: e.target.value,
                   };
                 });
-                setButtonClicked(true);
-                console.log(answers);
               }}
-              value="false"
-            >
-              FALSE
-            </button>
-            <button
-              key={index}
-              //   className={buttonClicked ? "buttonTrue" : "buttonFalse"}
+            />
+            <span style={{ margin: "10px" }}></span>
+            <input
+              type="button"
+              name="3"
+              className="agree"
+              value="agree"
               className={
-                answers[question.id] === "neutral"
-                  ? "buttonTrue"
-                  : "buttonFalse"
+                answers[question.id] === "agree" ? "agree-clicked" : "agree"
               }
+              value="agree"
               onClick={(e) => {
                 question.answer = e.target.value;
                 setAnswers((answers) => {
@@ -80,18 +84,18 @@ function Question(props) {
                     [question.id]: e.target.value,
                   };
                 });
-                setButtonClicked(true);
               }}
-              value="neutral"
-            >
-              NEUTRAL
-            </button>
-            <button
-              key={index}
-              //   className={buttonClicked ? "buttonTrue" : "buttonFalse"}
+            />
+            <span style={{ margin: "10px" }}></span>
+            <input
+              type="button"
+              name="3"
               className={
-                answers[question.id] === "true" ? "buttonTrue" : "buttonFalse"
+                answers[question.id] === "intermediate"
+                  ? "intermediate-clicked"
+                  : "intermediate"
               }
+              value="intermediate"
               onClick={(e) => {
                 question.answer = e.target.value;
                 setAnswers((answers) => {
@@ -100,16 +104,53 @@ function Question(props) {
                     [question.id]: e.target.value,
                   };
                 });
-                setButtonClicked(true);
               }}
-              value="true"
-            >
-              TRUE
-            </button>
+            />
+            <span style={{ margin: "10px" }}></span>
+            <input
+              type="button"
+              name="3"
+              className={
+                answers[question.id] === "disagree"
+                  ? "disagree-clicked"
+                  : "disagree"
+              }
+              value="disagree"
+              onClick={(e) => {
+                question.answer = e.target.value;
+                setAnswers((answers) => {
+                  return {
+                    ...answers,
+                    [question.id]: e.target.value,
+                  };
+                });
+              }}
+            />
+            <span style={{ margin: "10px" }}></span>
+            <input
+              type="button"
+              name="3"
+              className={
+                answers[question.id] === "strong-disagree"
+                  ? "strong-disagree-clicked"
+                  : "strong-disagree"
+              }
+              value="strong-disagree"
+              onClick={(e) => {
+                question.answer = e.target.value;
+                setAnswers((answers) => {
+                  return {
+                    ...answers,
+                    [question.id]: e.target.value,
+                  };
+                });
+              }}
+              checked
+            />
+            <label className="lab-up">Disagree</label>
           </div>
         );
       })}
-      <button onClick={() => getArray(questions)}>SUBMIT</button>
     </div>
   );
 }

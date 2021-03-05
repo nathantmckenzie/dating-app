@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import LoginForm from "./pages/LoginForm";
